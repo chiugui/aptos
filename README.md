@@ -10,12 +10,16 @@ https://wiki.aptos.movemove.org/
 
 # 安装 Docker
 wget -O get-docker.sh https://get.docker.com 
-sudo sh get-docker.sh
+
+sh get-docker.sh
+
 rm -f get-docker.sh
 
+
 # 安装 docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
 
 
 ## 更新节点
