@@ -1,5 +1,4 @@
 # optos
-optos
 https://aptoslabs.com/
 
 https://aptos.dev/
