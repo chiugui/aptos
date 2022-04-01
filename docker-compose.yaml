@@ -28,7 +28,7 @@
 # e.g. rename it to docker-compose.mon.yaml and run:
 # `docker-compose -f docker-compose.yaml -f docker-compose.mon.yaml up -d`
 # Dashboard can be accessed locally by loading localhost:3000 on your browser
-version: "3.8"
+version: "3.4"
 services:
   fullnode:
     image: aptoslab/validator:devnet
@@ -52,5 +52,6 @@ services:
     ports:
       - "8080:8080"
       - "9101:9101"
+      - "6180:6180"
 volumes:
   db:
