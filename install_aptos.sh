@@ -10,6 +10,10 @@ mkdir -p ${DIR}/aptos-node-$i && cd ${DIR}/aptos-node-$i
 # 下载 docker-compose 编排文件
 #wget -O ./docker-compose.yaml https://raw.githubusercontent.com/chiugui/aptos/main/docker-compose.yaml
 \cp ${SH_PWD}/docker-compose.yaml ./docker-compose.yaml
+sed -i s#8080:8080#10${i}0:8080#g ./docker-compose.yaml
+sed -i s#9101:9101#11${i}0:9101#g ./docker-compose.yaml
+sed -i s#6180:6180#12${i}0:6180#g ./docker-compose.yaml
+
 # 下载 全节点配置文件
 #wget -O ./public_full_node.yaml https://raw.githubusercontent.com/chiugui/aptos/main/public_full_node.yaml
 \cp ${SH_PWD}/public_full_node.yaml ./public_full_node.yaml
