@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #安装docker和docker-compose略
-PWD=`pwd`
+SH_PWD=`pwd`
 Dir=/root
 i=1
 
@@ -9,16 +9,16 @@ i=1
 mkdir -p ${Dir}/aptos-node-$i && cd ${Dir}/aptos-node-$i
 # 下载 docker-compose 编排文件
 #wget -O ./docker-compose.yaml https://raw.githubusercontent.com/chiugui/aptos/main/docker-compose.yaml
-\cp $PWD/docker-compose.yaml ./docker-compose.yaml
+\cp ${SH_PWD}/docker-compose.yaml ./docker-compose.yaml
 # 下载 全节点配置文件
 #wget -O ./public_full_node.yaml https://raw.githubusercontent.com/chiugui/aptos/main/public_full_node.yaml
-\cp $PWD/public_full_node.yaml ./public_full_node.yaml
+\cp ${SH_PWD}/public_full_node.yaml ./public_full_node.yaml
 # 下载 创世节点文件
 wget -O ./genesis.blob https://devnet.aptoslabs.com/genesis.blob
 # 下载 waypoint（可验证检查点）文件
 wget -O ./waypoint.txt https://devnet.aptoslabs.com/waypoint.txt
 # 拷贝升级脚本
-\cp $PWD/update_aptos.sh ./update_aptos.sh
+\cp ${SH_PWD}/update_aptos.sh ./update_aptos.sh
 # 更新镜像
 docker pull aptoslab/tools:devnet
 # 生成私钥和公钥
