@@ -34,6 +34,7 @@ Public_key=`sed -n '/---/{n;p;}' ./key.txt |awk -F ':' '{print $1}'`
 sed -i "18 a \      identity:\n        type: \"from_config\"\n        key: \"${Private_key}\"\n        peer_id: \"${Public_key}\"" ./public_full_node.yaml
 
 # 启动docker
+docker network create aptos-network
 docker-compose up -d
 sleep 120
 #查看节点信息
