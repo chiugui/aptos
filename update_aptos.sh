@@ -1,10 +1,12 @@
 #!/bin/bash
 
+DIR=`pwd |awk -F '/' '{print $NF}'`
+
 #1.关闭节点
 docker-compose down
 
 #2.删除docker volume
-docker volume rm aptos_node_db
+docker volume rm ${DIR}_db
 
 #3.删除文件重新下载
 # 下载 创世节点文件
