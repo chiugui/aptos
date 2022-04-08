@@ -55,3 +55,6 @@ services:
       - "6180:6180"
 volumes:
   db:
+networks:
+  aptos-network:
+    external: true  
