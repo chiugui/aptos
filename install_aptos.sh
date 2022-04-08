@@ -6,7 +6,7 @@ DIR=/root
 i=1
 
 # 创建 aptos-node 目录并进入该目录，之后的操作都会在该目录下进行
-mkdir -p ${DIR}/aptos-node-$i && cd ${DIR}/aptos-node-$i
+mkdir -p ${DIR}/aptos$i && cd ${DIR}/aptos$i
 # 下载 docker-compose 编排文件
 #wget -O ./docker-compose.yaml https://raw.githubusercontent.com/chiugui/aptos/main/docker-compose.yaml
 \cp ${SH_PWD}/docker-compose.yaml ./docker-compose.yaml
@@ -37,5 +37,5 @@ sed -i "18 a \      identity:\n        type: \"from_config\"\n        key: \"${P
 docker-compose up -d
 
 #查看节点信息
-curl 127.0.0.1:11${i}0/metrics 2> /dev/null | grep -m 1 peer_id
-curl 127.0.0.1:11${i}0/metrics 2> /dev/null | grep aptos_state_sync_version | grep type
+echo "curl 127.0.0.1:11${i}0/metrics 2> /dev/null | grep -m 1 peer_id"
+echo "curl 127.0.0.1:11${i}0/metrics 2> /dev/null | grep aptos_state_sync_version | grep type"
