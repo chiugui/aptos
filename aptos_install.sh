@@ -4,6 +4,7 @@
 PWD=`pwd`
 Dir=/root
 i=1
+
 # 创建 aptos-node 目录并进入该目录，之后的操作都会在该目录下进行
 mkdir -p ${Dir}/aptos-node-$i && cd ${Dir}/aptos-node-$i
 # 下载 docker-compose 编排文件
@@ -16,7 +17,8 @@ mkdir -p ${Dir}/aptos-node-$i && cd ${Dir}/aptos-node-$i
 wget -O ./genesis.blob https://devnet.aptoslabs.com/genesis.blob
 # 下载 waypoint（可验证检查点）文件
 wget -O ./waypoint.txt https://devnet.aptoslabs.com/waypoint.txt
-
+# 拷贝升级脚本
+\cp $PWD/update_aptos.sh ./update_aptos.sh
 # 更新镜像
 docker pull aptoslab/tools:devnet
 # 生成私钥和公钥
