@@ -35,7 +35,7 @@ sed -i "18 a \      identity:\n        type: \"from_config\"\n        key: \"${P
 
 # 启动docker
 docker-compose up -d
-
+sleep 120
 #查看节点信息
 echo "curl 127.0.0.1:11${i}0/metrics 2> /dev/null | grep -m 1 peer_id"
 echo "curl 127.0.0.1:11${i}0/metrics 2> /dev/null | grep aptos_state_sync_version | grep type"
