@@ -6,9 +6,9 @@ i=1
 # 创建 aptos-node 目录并进入该目录，之后的操作都会在该目录下进行
 mkdir -p ~/aptos-node-$i && cd ~/aptos-node-$i
 # 下载 docker-compose 编排文件
-wget -O ./docker-compose.yaml https://raw.githubusercontent.com/chiugui/optos/main/docker-compose.yaml
+wget -O ./docker-compose.yaml https://raw.githubusercontent.com/chiugui/aptos/main/docker-compose.yaml
 # 下载 全节点配置文件
-wget -O ./public_full_node.yaml https://raw.githubusercontent.com/chiugui/optos/main/public_full_node.yaml
+wget -O ./public_full_node.yaml https://raw.githubusercontent.com/chiugui/aptos/main/public_full_node.yaml
 # 下载 创世节点文件
 wget -O ./genesis.blob https://devnet.aptoslabs.com/genesis.blob
 # 下载 waypoint（可验证检查点）文件
