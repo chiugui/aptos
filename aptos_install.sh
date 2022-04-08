@@ -2,7 +2,7 @@
 
 #安装docker和docker-compose略
 PWD=`pwd`
-Dir=/opt
+Dir=/root
 i=1
 # 创建 aptos-node 目录并进入该目录，之后的操作都会在该目录下进行
 mkdir -p ${Dir}/aptos-node-$i && cd ${Dir}/aptos-node-$i
