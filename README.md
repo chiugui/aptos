@@ -1,4 +1,4 @@
-# optos
+# aptos
 
 https://aptoslabs.com/
 
