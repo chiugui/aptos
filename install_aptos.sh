@@ -2,11 +2,11 @@
 
 #安装docker和docker-compose略
 SH_PWD=`pwd`
-Dir=/root
+DIR=/root
 i=1
 
 # 创建 aptos-node 目录并进入该目录，之后的操作都会在该目录下进行
-mkdir -p ${Dir}/aptos-node-$i && cd ${Dir}/aptos-node-$i
+mkdir -p ${DIR}/aptos-node-$i && cd ${DIR}/aptos-node-$i
 # 下载 docker-compose 编排文件
 #wget -O ./docker-compose.yaml https://raw.githubusercontent.com/chiugui/aptos/main/docker-compose.yaml
 \cp ${SH_PWD}/docker-compose.yaml ./docker-compose.yaml
