@@ -54,3 +54,8 @@ services:
       - "8080:8080"
       - "9101:9101"
       - "6180:6180"
+    networks:
+      aptos_network:
+networks:
+  aptos_network:
+    external: true
