@@ -30,9 +30,9 @@
 # Dashboard can be accessed locally by loading localhost:3000 on your browser
 version: "3.4"
 services:
-  restart: always
   fullnode:
     image: aptoslab/validator:devnet
+    restart: always
     volumes:
       - type: volume
         source: db
