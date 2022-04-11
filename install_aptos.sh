@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #安装docker和docker-compose略
+#docker network create --driver bridge --subnet 10.0.0.0/16 --gateway 10.0.0.1  aptos_network
 DIR=/aptos
 SH_PWD=`pwd`
 IP=`hostname -I |awk '{print $1}'`
