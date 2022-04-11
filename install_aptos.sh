@@ -1,9 +1,12 @@
 #!/bin/bash
 
 #安装docker和docker-compose略
-SH_PWD=`pwd`
 DIR=/aptos
+
+SH_PWD=`pwd`
 IP=`hostname -I |awk '{print $1}'`
+docker network create --driver bridge --subnet 10.0.0.0/16 --gateway 10.0.0.1  aptos_network
+
 i=4
 # 创建 aptos-node 目录并进入该目录，之后的操作都会在该目录下进行
 #rm -f ${SH_PWD}/perr_id.list
@@ -42,6 +45,7 @@ chmod 0600 ./public_full_node.yaml
 docker-compose up -d
 echo "节点启动中，请稍后......"
 sleep 60
+echo "节点peer id:"
 echo "peer_id_${i}:${Public_key}" && echo "peer_${i}:${Public_key}:${Private_key}" >> ${SH_PWD}/peer_id_${IP}.list 2>&1
 chmod 0600 ${SH_PWD}/peer_id_${IP}.list
 
