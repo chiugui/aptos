@@ -41,7 +41,7 @@ sed -i "18 a \      identity:\n        type: \"from_config\"\n        key: \"${P
 docker-compose up -d
 echo "节点启动中，请稍后......"
 sleep 60
-echo "peer_id_${i}:${Public_key}" && echo "peer_id_${i}:${Public_key}" >> ${SH_PWD}/perr_id.list 2>&1
+echo "peer_id_${i}:${Public_key}" && echo "peer_id_${i}:${Public_key}" >> ${SH_PWD}/peer_id.list 2>&1
 curl -s 127.0.0.1:11${i}0/metrics | grep aptos_state_sync_version | grep type
 #查看节点信息
 echo "查看节点信息,请使用如下命令:"
