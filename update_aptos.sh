@@ -6,9 +6,9 @@ DIR=`pwd |awk -F '/' '{print $NF}'`
 docker-compose down
 
 #2.删除docker volume
-docker volume rm ${DIR}_db
+#docker volume rm ${DIR}_db
+rm -fr ./data
 
-#3.删除文件重新下载
 # 下载 创世节点文件
 wget -O ./genesis.blob https://devnet.aptoslabs.com/genesis.blob
 # 下载 waypoint（可验证检查点）文件
@@ -19,4 +19,3 @@ docker-compose pull
 
 #5.启动全节点
 docker-compose up -d
-
