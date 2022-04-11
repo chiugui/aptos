@@ -34,8 +34,8 @@ services:
     image: aptoslab/validator:devnet
     restart: always
     volumes:
-      - type: volume
-        source: db
+      - type: bind
+        source: ./data
         target: /opt/aptos/data
       - type: bind
         source: ./genesis.blob
@@ -54,5 +54,3 @@ services:
       - "8080:8080"
       - "9101:9101"
       - "6180:6180"
-volumes:
-  db:
