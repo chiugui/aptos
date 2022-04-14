@@ -8,6 +8,7 @@ docker-compose down
 #2.删除docker volume
 #docker volume rm ${DIR}_db
 rm -fr ./data
+mkdir ./data
 
 # 下载 创世节点文件
 wget -O ./genesis.blob https://devnet.aptoslabs.com/genesis.blob
