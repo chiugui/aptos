@@ -45,7 +45,7 @@ Public_key=`sed -n '/---/{n;p;}' ./key.txt |awk -F ':' '{print $1}'`
 chmod 0400 ./key.txt
 
 # 修改配置文件
-sed -i "18 a \      identity:\n        type: \"from_config\"\n        key: \"${Private_key}\"\n        peer_id: \"${Public_key}\"" ./public_full_node.yaml && echo "修改配置文件成功！"
+sed -i "22 a \      identity:\n        type: \"from_config\"\n        key: \"${Private_key}\"\n        peer_id: \"${Public_key}\"" ./public_full_node.yaml && echo "修改配置文件成功！"
 chmod 0600 ./public_full_node.yaml
 
 # 启动docker
